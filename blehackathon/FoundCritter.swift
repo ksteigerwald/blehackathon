@@ -25,11 +25,12 @@ class FoundCritter: UIView {
         super.init(frame: UIScreen.main.bounds);
         self.frame = frame
         self.pic = img
-        self.backgroundColor = UIColor.init(red: 165/255, green: 219/255, blue: 220/225, alpha: 1.0)
+        self.backgroundColor = state.colors.baseBlue
         self.btnClose()
         self.critter()
         createParticles()
         
+        self.slideInMsg()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -37,22 +38,24 @@ class FoundCritter: UIView {
     }
     
     func btnClose() {
-        let r = CGRect(x: 320, y: 50, width: 30, height: 20)
+        let r = CGRect(x: 320, y: 50, width: 50, height: 50)
         let btn = UIButton(frame: r )
         btn.setTitle("Close", for: .normal)
-        btn.layer.backgroundColor = UIColor.green.cgColor
+        btn.layer.backgroundColor = state.colors.org.cgColor
         btn.addTarget(self, action: #selector(self.close), for: .touchUpInside)
         self.addSubview(btn)
     }
     
     func critter() {
-        let m = CGRect(x: 50, y: 100, width: 325, height: 325)
+        
+        
+        let m = CGRect(x: 25, y: 80, width: 325, height: 325)
         let mount:UIView = UIView(frame: m)
         
         mount.layer.borderWidth = 5
-        mount.layer.borderColor = UIColor.cyan.cgColor
+        mount.layer.borderColor = state.colors.blueHighlight.cgColor
         mount.layer.cornerRadius = mount.frame.width / 2
-        mount.layer.backgroundColor = UIColor.gray.cgColor
+        mount.layer.backgroundColor = state.colors.tanner.cgColor
         
         let p = CGPoint(x: mount.frame.size.width / 2, y: mount.frame.size.height / 2)
         let r = CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: mount.frame.width-45, height: mount.frame.height-45))
@@ -64,15 +67,23 @@ class FoundCritter: UIView {
         mount.addSubview(critter)
         
         self.addSubview(mount)
+
     }
-    
+    func slideInMsg() {
+        let f = CGRect(x: 10, y: self.frame.height - 200, width: self.frame.size.width - 20, height: 250)
+        let msgBox = SpringView(frame: f)
+        msgBox.layer.backgroundColor = UIColor.white.cgColor
+        msgBox.animation = "slideUp"
+        msgBox.curve = "easeIn"
+        msgBox.duration = 1.0
+        self.addSubview(msgBox)
+        msgBox.animate()
+    }
     func close() {
         print("close")
         state.critterCalled = false
         self.removeFromSuperview()
     }
-    
-
     
     func createParticles() {
         let particleEmitter = CAEmitterLayer()
@@ -81,9 +92,9 @@ class FoundCritter: UIView {
         particleEmitter.emitterShape = kCAEmitterLayerLine
         particleEmitter.emitterSize = CGSize(width: self.frame.size.width, height: 1)
         
-        let red = makeEmitterCell(color: UIColor.red)
-        let green = makeEmitterCell(color: UIColor.green)
-        let blue = makeEmitterCell(color: UIColor.blue)
+        let red = makeEmitterCell(color: state.colors.blueHighlight)
+        let green = makeEmitterCell(color: state.colors.org)
+        let blue = makeEmitterCell(color: state.colors.greenis)
         
         particleEmitter.emitterCells = [red, green, blue]
         

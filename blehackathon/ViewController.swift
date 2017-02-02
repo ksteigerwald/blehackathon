@@ -33,7 +33,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func callCritter(_ img: String = "panda") -> Void {
+    func callCritter(_ img: String = "lion") -> Void {
         guard !state.critterCalled else {
             return
         }
