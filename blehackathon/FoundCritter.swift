@@ -21,6 +21,9 @@ class FoundCritter: UIView {
     
     var pic:String?
     
+    let msgtxt = ["panda":["You've found our Panda", "Shifu would be proud for sure!"],
+                  "lion": ["Oh Snap!", "You've taimed the mighty beast!"]]
+    
     init(_ img: String) {
         super.init(frame: UIScreen.main.bounds);
         self.frame = frame
@@ -28,6 +31,7 @@ class FoundCritter: UIView {
         self.backgroundColor = state.colors.baseBlue
         self.btnClose()
         self.critter()
+        
         createParticles()
         
         self.slideInMsg()
@@ -38,11 +42,14 @@ class FoundCritter: UIView {
     }
     
     func btnClose() {
+        
         let r = CGRect(x: 320, y: 50, width: 50, height: 50)
         let btn = UIButton(frame: r )
+        
         btn.setTitle("Close", for: .normal)
         btn.layer.backgroundColor = state.colors.org.cgColor
         btn.addTarget(self, action: #selector(self.close), for: .touchUpInside)
+        
         self.addSubview(btn)
     }
     
@@ -69,16 +76,31 @@ class FoundCritter: UIView {
         self.addSubview(mount)
 
     }
+    
+    func msgs() {
+        
+    }
+    
     func slideInMsg() {
+        
         let f = CGRect(x: 10, y: self.frame.height - 200, width: self.frame.size.width - 20, height: 250)
         let msgBox = SpringView(frame: f)
         msgBox.layer.backgroundColor = UIColor.white.cgColor
         msgBox.animation = "slideUp"
         msgBox.curve = "easeIn"
         msgBox.duration = 1.0
+        
+        let head = UILabel(frame: CGRect(x: 10, y: 5, width: msgBox.frame.size.width - 30, height: 25))
+        let sub = UILabel(frame: CGRect(x: 10, y: 30, width: msgBox.frame.size.width - 30, height: 25))
+        head.text = msgtxt[self.pic!]?[0]
+        sub.text = msgtxt[self.pic!]?[1]
+        msgBox.addSubview(head)
+        msgBox.addSubview(sub)
         self.addSubview(msgBox)
         msgBox.animate()
+        
     }
+    
     func close() {
         print("close")
         state.critterCalled = false
