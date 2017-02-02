@@ -64,6 +64,7 @@
 		80DC12B11E427D820000DC5A /* blehackathon */ = {
 			isa = PBXGroup;
 			children = (
+				806AC8121E42C78E008A40A3 /* DiscoverViewController.swift */,
 				80DC12B21E427D820000DC5A /* AppDelegate.swift */,
 				80DC12B41E427D820000DC5A /* ViewController.swift */,
 				80DC12B61E427D820000DC5A /* Main.storyboard */,
@@ -72,7 +73,6 @@
 				80DC12BE1E427D820000DC5A /* Info.plist */,
 				800DE0D51E42B88E009225E6 /* CCMRadarView.swift */,
 				806AC8101E42C767008A40A3 /* State.swift */,
-				806AC8121E42C78E008A40A3 /* DiscoverViewController.swift */,
 				806AC8141E42EDC6008A40A3 /* locationService.swift */,
 				806AC8161E42EEBE008A40A3 /* FoundCritter.swift */,
 			);

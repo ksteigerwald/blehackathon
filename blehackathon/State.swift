@@ -11,9 +11,9 @@ import CoreLocation
 
 class State {
     static let shared = State()
-    
     var region:CLBeaconRegion?
     var critterCalled:Bool = false
+    
 }
 
 let state = State.shared

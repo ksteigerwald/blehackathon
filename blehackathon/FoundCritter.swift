@@ -46,11 +46,24 @@ class FoundCritter: UIView {
     }
     
     func critter() {
-        let r = CGRect(x: 50, y: 100, width: 250, height: 250)
+        let m = CGRect(x: 50, y: 100, width: 325, height: 325)
+        let mount:UIView = UIView(frame: m)
+        
+        mount.layer.borderWidth = 5
+        mount.layer.borderColor = UIColor.cyan.cgColor
+        mount.layer.cornerRadius = mount.frame.width / 2
+        mount.layer.backgroundColor = UIColor.gray.cgColor
+        
+        let p = CGPoint(x: mount.frame.size.width / 2, y: mount.frame.size.height / 2)
+        let r = CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: mount.frame.width-45, height: mount.frame.height-45))
         let critter:UIImageView = UIImageView(frame: r)
+        critter.center = p
+        
         print("****\(self.pic)")
         critter.image = UIImage(named: self.pic!)
-        self.addSubview(critter)
+        mount.addSubview(critter)
+        
+        self.addSubview(mount)
     }
     
     func close() {
