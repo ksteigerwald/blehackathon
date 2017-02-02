@@ -11,19 +11,32 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBAction func btnStop(_ sender: Any) {
+        
+    }
+    
+    @IBOutlet weak var magblip: UIView!
+    
     @IBOutlet weak var radar: CCMRadarView!
     var locationManager:CLLocationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reinit), name: myEvents, object: nil)
     }
     
     
+    func reinit(_ notification: Notification) -> Void {
+        
+        locationManager.startRangingBeacons(in: state.region!)
+        radar.startAnimation()
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         print("----------- appaear --------------")
+        self.magblip.layer.cornerRadius = self.magblip.frame.width / 2
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
@@ -57,7 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        print(beacons)
+        
         guard let discoveredBeacon = beacons.first?.proximity else {
             print("couldn't find beacon")
             return
@@ -65,14 +78,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let backgroundColor:UIColor = {
             switch discoveredBeacon {
-            case .immediate: return UIColor.green
-            case .near: return UIColor.orange
-            case .far: return UIColor.red
-            case .unknown: return UIColor.black
+            case .immediate:
+                state.region = region
+                
+                self.performSegue(withIdentifier: "goToDiscover", sender: nil)
+                return UIColor.green
+            case .near:
+                state.region = region
+                self.performSegue(withIdentifier: "goToDiscover", sender: nil)
+                return UIColor.orange
+            case .far:
+                return UIColor.yellow
+            case .unknown: return UIColor.red
             }
         }()
-        
-        view.backgroundColor = backgroundColor
+        self.magblip.layer.backgroundColor = backgroundColor.cgColor
+        //view.backgroundColor = backgroundColor
         
     }
     

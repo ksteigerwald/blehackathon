@@ -64,7 +64,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="2Pk-qm-oa3" kind="show" id="N6a-X5-rzd"/>
+                                    <action selector="btnStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j92-uo-ygL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,8 +72,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="nVb-Bu-ghn"/>
                     <connections>
+                        <outlet property="btnStop" destination="x3G-P4-jqP" id="5ds-1L-Gsa"/>
+                        <outlet property="magblip" destination="ush-S7-eE0" id="BVW-VG-xqz"/>
                         <outlet property="radar" destination="v0z-Rm-HGm" id="eKM-Yd-ifR"/>
-                        <segue destination="2Pk-qm-oa3" kind="show" id="igr-aP-fpS"/>
+                        <segue destination="2Pk-qm-oa3" kind="show" identifier="goToDiscover" id="ZZF-zn-kja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -102,15 +104,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3D-GP-WSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.60000000000002" y="135.38230884557723"/>
+            <point key="canvasLocation" x="985" y="137"/>
         </scene>
     </scenes>
     <resources>
         <image name="magnifyingGlass" width="48" height="48"/>
         <image name="panda" width="294" height="294"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="igr-aP-fpS"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

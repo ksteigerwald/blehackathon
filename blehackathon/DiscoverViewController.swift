@@ -20,6 +20,14 @@ class DiscoverViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.post(name: myEvents, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func createParticles() {
         let particleEmitter = CAEmitterLayer()
         

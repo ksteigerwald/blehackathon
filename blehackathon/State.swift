@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import CoreLocation
+
+class State {
+    static let shared = State()
+    
+    var region:CLBeaconRegion?
+    
+}
+
+let state = State.shared
+let myEvents = Notification.Name("myEvts")
+
