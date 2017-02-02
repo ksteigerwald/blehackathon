@@ -18,7 +18,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func btnStop(_ sender: Any) {
-        
         self.callCritter()
     }
     
@@ -26,6 +25,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var radar: CCMRadarView!
     
     var locationManager:CLLocationManager = CLLocationManager()
+    
+    @IBAction func btnCaptured(_ sender: Any) {
+        let view = Captured()
+        self.view.addSubview(view)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,17 +109,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             case .immediate:
                 state.region = region
                 self.callCritter(sticker!)
-                return UIColor.green
+                return state.colors.greenis
             case .near:
                 state.region = region
                 self.callCritter(sticker!)
-                return UIColor.orange
+                return state.colors.greenis
             case .far:
-                return UIColor.yellow
-            case .unknown: return UIColor.red
+                return state.colors.org
+            case .unknown: return state.colors.blueHighlight
             }
         }()
+        
         self.magblip.layer.backgroundColor = backgroundColor.cgColor
+        
         //view.backgroundColor = backgroundColor
         
     }

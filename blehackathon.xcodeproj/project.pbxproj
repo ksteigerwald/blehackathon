@@ -42,6 +42,7 @@
 		806AC8531E436441008A40A3 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AC8361E436441008A40A3 /* TransitionManager.swift */; };
 		806AC8541E436441008A40A3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AC8371E436441008A40A3 /* TransitionZoom.swift */; };
 		806AC8551E436441008A40A3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AC8381E436441008A40A3 /* UnwindSegue.swift */; };
+		806AC8571E43A040008A40A3 /* Captured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AC8561E43A040008A40A3 /* Captured.swift */; };
 		80DC12B31E427D820000DC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC12B21E427D820000DC5A /* AppDelegate.swift */; };
 		80DC12B51E427D820000DC5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC12B41E427D820000DC5A /* ViewController.swift */; };
 		80DC12B81E427D820000DC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DC12B61E427D820000DC5A /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		806AC8361E436441008A40A3 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		806AC8371E436441008A40A3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		806AC8381E436441008A40A3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		806AC8561E43A040008A40A3 /* Captured.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captured.swift; sourceTree = "<group>"; };
 		80DC12AF1E427D820000DC5A /* blehackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blehackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DC12B21E427D820000DC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80DC12B41E427D820000DC5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				806AC8161E42EEBE008A40A3 /* FoundCritter.swift */,
 				806AC81A1E436441008A40A3 /* Spring */,
 				806AC8181E4361B0008A40A3 /* Animations.swift */,
+				806AC8561E43A040008A40A3 /* Captured.swift */,
 			);
 			path = blehackathon;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				806AC83B1E436441008A40A3 /* AutoTextView.swift in Sources */,
 				806AC8511E436441008A40A3 /* SpringTextView.swift in Sources */,
 				806AC83D1E436441008A40A3 /* DesignableButton.swift in Sources */,
+				806AC8571E43A040008A40A3 /* Captured.swift in Sources */,
 				806AC8191E4361B0008A40A3 /* Animations.swift in Sources */,
 				806AC8131E42C78E008A40A3 /* DiscoverViewController.swift in Sources */,
 			);

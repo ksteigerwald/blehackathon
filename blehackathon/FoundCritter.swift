@@ -29,7 +29,7 @@ class FoundCritter: UIView {
         self.frame = frame
         self.pic = img
         self.backgroundColor = state.colors.baseBlue
-        self.btnClose()
+        
         self.critter()
         
         createParticles()
@@ -41,9 +41,11 @@ class FoundCritter: UIView {
         super.init(coder: aDecoder)!
     }
     
+    
     func btnClose() {
         
-        let r = CGRect(x: 320, y: 50, width: 50, height: 50)
+        
+        let r = CGRect(x: 20, y: self.frame.height - 80, width: self.frame.width - 40, height: 50)
         let btn = UIButton(frame: r )
         
         btn.setTitle("Close", for: .normal)
@@ -73,8 +75,9 @@ class FoundCritter: UIView {
         critter.image = UIImage(named: self.pic!)
         mount.addSubview(critter)
         
+        
         self.addSubview(mount)
-
+        
     }
     
     func msgs() {
@@ -97,6 +100,18 @@ class FoundCritter: UIView {
         msgBox.addSubview(head)
         msgBox.addSubview(sub)
         self.addSubview(msgBox)
+        
+        let r2 = CGRect.zero
+        
+        let btn = UIButton(frame: r2 )
+        
+        btn.setTitle("Close", for: .normal)
+        btn.layer.backgroundColor = state.colors.org.cgColor
+        btn.addTarget(self, action: #selector(self.close), for: .touchUpInside)
+        btn.frame = CGRect(x: 20, y: msgBox.frame.height - 100, width: msgBox.frame.width - 40, height: 50)
+        msgBox.addSubview(btn)
+
+        
         msgBox.animate()
         
     }
