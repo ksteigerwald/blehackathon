@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		800DE0D61E42B88E009225E6 /* CCMRadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DE0D51E42B88E009225E6 /* CCMRadarView.swift */; };
+		806AC8111E42C767008A40A3 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AC8101E42C767008A40A3 /* State.swift */; };
+		806AC8131E42C78E008A40A3 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806AC8121E42C78E008A40A3 /* DiscoverViewController.swift */; };
 		80DC12B31E427D820000DC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC12B21E427D820000DC5A /* AppDelegate.swift */; };
 		80DC12B51E427D820000DC5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC12B41E427D820000DC5A /* ViewController.swift */; };
 		80DC12B81E427D820000DC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DC12B61E427D820000DC5A /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		800DE0D51E42B88E009225E6 /* CCMRadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMRadarView.swift; sourceTree = "<group>"; };
+		806AC8101E42C767008A40A3 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		806AC8121E42C78E008A40A3 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		80DC12AF1E427D820000DC5A /* blehackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blehackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DC12B21E427D820000DC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80DC12B41E427D820000DC5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				80DC12BB1E427D820000DC5A /* LaunchScreen.storyboard */,
 				80DC12BE1E427D820000DC5A /* Info.plist */,
 				800DE0D51E42B88E009225E6 /* CCMRadarView.swift */,
+				806AC8101E42C767008A40A3 /* State.swift */,
+				806AC8121E42C78E008A40A3 /* DiscoverViewController.swift */,
 			);
 			path = blehackathon;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 				80DC12B51E427D820000DC5A /* ViewController.swift in Sources */,
 				800DE0D61E42B88E009225E6 /* CCMRadarView.swift in Sources */,
 				80DC12B31E427D820000DC5A /* AppDelegate.swift in Sources */,
+				806AC8111E42C767008A40A3 /* State.swift in Sources */,
+				806AC8131E42C78E008A40A3 /* DiscoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

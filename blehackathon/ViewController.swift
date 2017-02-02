@@ -18,6 +18,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         
+    }
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("----------- appaear --------------")
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
@@ -43,6 +49,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("--becanso")
         if status == .authorizedAlways {
             // user has authorized the application -range the beacons
             rangeBeacons()

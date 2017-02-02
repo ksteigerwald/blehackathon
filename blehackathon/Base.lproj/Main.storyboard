@@ -59,6 +59,14 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="magnifyingGlass"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3G-P4-jqP">
+                                <rect key="frame" x="214" y="610" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="2Pk-qm-oa3" kind="show" id="N6a-X5-rzd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.64820533989999995" green="0.85949981210000004" blue="0.86482632159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -72,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
+        <!--Discover View Controller-->
         <scene sceneID="kXO-yS-FUL">
             <objects>
-                <viewController id="2Pk-qm-oa3" sceneMemberID="viewController">
+                <viewController id="2Pk-qm-oa3" customClass="DiscoverViewController" customModule="blehackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lrt-Vp-dYB"/>
                         <viewControllerLayoutGuide type="bottom" id="aJM-8O-eAZ"/>
@@ -83,16 +91,26 @@
                     <view key="view" contentMode="scaleToFill" id="1L5-P6-2hg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="panda" translatesAutoresizingMaskIntoConstraints="NO" id="pcR-VE-zui">
+                                <rect key="frame" x="47" y="104" width="275" height="275"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.64820533989999995" green="0.85949981210000004" blue="0.86482632159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3D-GP-WSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="136"/>
+            <point key="canvasLocation" x="853.60000000000002" y="135.38230884557723"/>
         </scene>
     </scenes>
     <resources>
         <image name="magnifyingGlass" width="48" height="48"/>
+        <image name="panda" width="294" height="294"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="igr-aP-fpS"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
