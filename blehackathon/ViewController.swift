@@ -11,10 +11,13 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var radar: CCMRadarView!
     var locationManager:CLLocationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
@@ -35,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let minorTwo:CLBeaconMinorValue = 0
         let myidTwo = "my.virtual.beacon"
         let regionTwo = CLBeaconRegion(proximityUUID: uuidTwo!, major: majorTwo, minor: minorTwo, identifier: myidTwo)
-        
+        self.radar.startAnimation()
         locationManager.startRangingBeacons(in: regionTwo)
     }
     
