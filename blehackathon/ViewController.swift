@@ -48,7 +48,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         self.view.addSubview(view)
     }
-    func reinit(_ notification: Notification) -> Void {
+    @objc func reinit(_ notification: Notification) -> Void {
         
         radar.startAnimation()
     }

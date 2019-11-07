@@ -58,11 +58,11 @@ extension UIView {
         }
         
         // Customize the animation's properties
-        slideInFromLeftTransition.type = kCATransitionPush
-        slideInFromLeftTransition.subtype = kCATransitionFromLeft
+        slideInFromLeftTransition.type = CATransitionType.push
+        slideInFromLeftTransition.subtype = CATransitionSubtype.fromLeft
         slideInFromLeftTransition.duration = duration
-        slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        slideInFromLeftTransition.fillMode = kCAFillModeRemoved
+        slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        slideInFromLeftTransition.fillMode = CAMediaTimingFillMode.removed
         
         // Add the animation to the View's layer
         self.layer.add(slideInFromLeftTransition, forKey: "slideInFromLeftTransition")

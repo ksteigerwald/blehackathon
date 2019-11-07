@@ -49,7 +49,7 @@ class Captured: UIView {
         self.addSubview(btn)
     }
 
-    func close() {
+    @objc func close() {
         print("close")
         state.critterCalled = false
         self.removeFromSuperview()

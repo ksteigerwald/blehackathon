@@ -71,7 +71,7 @@ class FoundCritter: UIView {
         let critter:UIImageView = UIImageView(frame: r)
         critter.center = p
         
-        print("****\(self.pic)")
+        print("****\(String(describing: self.pic))")
         critter.image = UIImage(named: self.pic!)
         mount.addSubview(critter)
         
@@ -116,7 +116,7 @@ class FoundCritter: UIView {
         
     }
     
-    func close() {
+    @objc func close() {
         print("close")
         state.critterCalled = false
         self.removeFromSuperview()
@@ -126,7 +126,7 @@ class FoundCritter: UIView {
         let particleEmitter = CAEmitterLayer()
         
         particleEmitter.emitterPosition = CGPoint(x: self.center.x, y: -96)
-        particleEmitter.emitterShape = kCAEmitterLayerLine
+        particleEmitter.emitterShape = CAEmitterLayerEmitterShape.line
         particleEmitter.emitterSize = CGSize(width: self.frame.size.width, height: 1)
         
         let red = makeEmitterCell(color: state.colors.blueHighlight)
